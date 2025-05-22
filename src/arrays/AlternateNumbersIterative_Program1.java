@@ -14,6 +14,7 @@ import java.util.ArrayList;
 //Input: arr[] = [-5, 1, 4, 2, 12]
 //Output: -5 4 12
 //
+
 public class AlternateNumbersIterative_Program1 {
 
     private ArrayList<Integer> getAlternates(int[] arr) {
