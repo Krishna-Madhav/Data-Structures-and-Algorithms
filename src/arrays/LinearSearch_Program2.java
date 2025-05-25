@@ -24,7 +24,7 @@ public class LinearSearch_Program2 {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == element) {
                 elementIndex = i;
-                break; // So that only first instance is found and in case same elements (number) at later index exists then it's not considered
+                return elementIndex; // So that only first instance is found and in case same elements (number) at later index exists then it's not considered
             }
         }
         return elementIndex;
