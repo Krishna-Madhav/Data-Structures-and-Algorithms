@@ -6,11 +6,11 @@ import java.util.Arrays;
  * Second Largest
  * Difficulty: EasyAccuracy: 26.72%Submissions: 1.2MPoints: 2Average Time: 15m
  * Given an array of positive integers arr[], return the second largest element from the array. If the second largest element doesn't exist then return -1.
- *
+ * <p>
  * Note: The second largest element should not be equal to the largest element.
- *
+ * <p>
  * Examples:
- *
+ * <p>
  * Input: arr[] = [12, 35, 1, 10, 34, 1]
  * Output: 34
  * Explanation: The largest element of the array is 35 and the second largest element is 34.
@@ -42,11 +42,11 @@ public class SecondLargestNumber_Program4 {
         System.out.println("largest " + largest + " secondlargest " + secondLargest);
 
         for (int i = 2; i < arr.length; i++) {
-            if (largest < arr[i]) {
+            if (arr[i] > largest) {
                 secondLargest = largest;
                 largest = arr[i];
             }
-            if (secondLargest < arr[i] && arr[i] < largest) {
+            if (arr[i] > secondLargest && arr[i] < largest) {
                 secondLargest = arr[i];
             }
         }
