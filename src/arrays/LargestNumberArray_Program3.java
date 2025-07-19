@@ -11,7 +11,7 @@ public class LargestNumberArray_Program3 {
 
         for (int i = 1; i < arr.length; i++) {
             if(largestNum < arr[i]){
-                largestNum = arr[i];  // Putting largest number so far in thi variable
+                largestNum = arr[i];  // Putting the largest number so far in this variable
             }
         }
 
@@ -19,11 +19,15 @@ public class LargestNumberArray_Program3 {
     }
 
     // Approach 2 (Using in-built method to reduce lines of code)
-    
-    
+    private int largestNumber2(int[] arr) {
+        Arrays.sort(arr);
+        int largest = arr[arr.length-1];
+        return largest;
+    }
+
     public static void main(String[] args) {
 
-        int arr[] = {1,2,4,56,700,8, 100};
+        int[] arr = {1,2,4,56,700,8, 100};
 
         LargestNumberArray_Program3 driver = new LargestNumberArray_Program3();
     
@@ -35,13 +39,4 @@ public class LargestNumberArray_Program3 {
         System.out.println("Largest number using approach2 : \n"+ output1);
 
     }
-
-    private int largestNumber2(int[] arr) {
-
-        Arrays.sort(arr);
-        int largest = arr[arr.length-1];
-        return largest;
-    }
-
-
 }
