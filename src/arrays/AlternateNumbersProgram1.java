@@ -2,6 +2,7 @@ package arrays;
 
 import java.util.ArrayList;
 
+// https://www.geeksforgeeks.org/dsa/print-alternate-elements-of-an-array/
 // Given an array arr[], the task is to print every alternate element of the array starting from the first element.
 //
 //Examples:
@@ -15,8 +16,9 @@ import java.util.ArrayList;
 //Output: -5 4 12
 //
 
-public class AlternateNumbersIterative_Program1 {
+public class AlternateNumbersProgram1 {
 
+    // Iterative approach
     private ArrayList<Integer> getAlternates(int[] arr) {
 
         ArrayList<Integer> output = new ArrayList<>();
@@ -31,9 +33,9 @@ public class AlternateNumbersIterative_Program1 {
 
     public static void main(String[] args) {
 
-        AlternateNumbersIterative_Program1 driver = new AlternateNumbersIterative_Program1();
+        AlternateNumbersProgram1 driver = new AlternateNumbersProgram1();
 
-        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ArrayList<Integer> alternateNumbers = driver.getAlternates(arr);
 
         System.out.println(alternateNumbers);
