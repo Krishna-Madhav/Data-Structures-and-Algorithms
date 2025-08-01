@@ -117,6 +117,7 @@ public class Program5_TwoSum {
 
             int remainingValue = target - arr[i];
 
+            // Search the hashmap for remaining value or compliment, if found, then we got our pair
             if (mapValueAndIndex.containsKey(remainingValue)) {
                 outputArrIndex[0] = mapValueAndIndex.get(remainingValue);
                 outputArrIndex[1] = i;
