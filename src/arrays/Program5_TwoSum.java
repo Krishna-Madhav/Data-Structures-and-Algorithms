@@ -1,6 +1,8 @@
 package arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
       https://leetcode.com/problems/two-sum
@@ -56,10 +58,10 @@ public class Program5_TwoSum {
         int[] sortedArray = Arrays.copyOf(nums, nums.length);
         Arrays.sort(sortedArray);
 
-        int first = 0 , last = nums.length - 1;
+        int first = 0, last = nums.length - 1;
 
-        while(first < last){
-            if(sortedArray[first] + sortedArray[last] == target){
+        while (first < last) {
+            if (sortedArray[first] + sortedArray[last] == target) {
                 sumArr[0] = sortedArray[first];
                 sumArr[1] = sortedArray[last];
                 break;
@@ -77,35 +79,69 @@ public class Program5_TwoSum {
         boolean foundVal1 = false;
         boolean foundVal2 = false;
 
-        for(int k = 0 ; k< nums.length; k++){
-            if(nums[k] == sumArr[0] && !foundVal1 ){
+        for (int k = 0; k < nums.length; k++) {
+            if (nums[k] == sumArr[0] && !foundVal1) {
                 outputArrIndex[0] = k;
                 foundVal1 = true;
-            }
-            else if(nums[k] == sumArr[1] && !foundVal2){
+            } else if (nums[k] == sumArr[1] && !foundVal2) {
                 outputArrIndex[1] = k;
                 foundVal2 = true;
             }
 
-            if( foundVal1 && foundVal2){
+            if (foundVal1 && foundVal2) {
                 break;
             }
         }
         return outputArrIndex;
     }
 
+    /**
+     * In this approach I'm using hashmap to find the indices of the numbers whose sum is equal to the target
+
+     * I store each number in a hashmap where number from the given array is the 'key' and 'value' is the respective index.
+     * We make use of concept of a+b = target. Then for a given number remainder is c - a. Using this I compute if the remainder is
+     * present in the 'key' of hashmap which also gives the required index of the number.
+
+     * This in turn is returned back to the calling function
+     *
+     * @param arr Given array
+     * @param target Value is the sum of two numbers
+     * @return
+     */
+    public int[] twoSumApproach3(int[] arr, int target) {
+
+        Map<Integer, Integer> mapValueAndIndex = new HashMap<>();
+        int[] outputArrIndex = new int[2];
+
+        for (int i = 0; i < arr.length; i++) {
+
+            int remainingValue = target - arr[i];
+
+            if (mapValueAndIndex.containsKey(remainingValue)) {
+                outputArrIndex[0] = mapValueAndIndex.get(remainingValue);
+                outputArrIndex[1] = i;
+            }
+            mapValueAndIndex.put(arr[i], i);
+        }
+
+        return outputArrIndex;
+    }
+
 
     public static void main(String[] args) {
 
-        int[] arr = {2,5,5,11};
+        int[] arr = {1, 5, 5, 11};
         int target = 10;
 
         Program5_TwoSum program5TwoSum = new Program5_TwoSum();
-        //int resultArr[] = program5TwoSum.twoSum(arr, target);
+        // int resultArr[] = program5TwoSum.twoSum(arr, target);
 
-        int[] resultArr = program5TwoSum.twoSumApproach2(arr, target);
+        // int[] resultArr = program5TwoSum.twoSumApproach2(arr, target);
+
+        int[] resultArr = program5TwoSum.twoSumApproach3(arr, target);
+        System.out.print("Output index : ");
 
         for (int i : resultArr)
-            System.out.println("Output index : " + i);
+            System.out.print(i + " ");
     }
 }
