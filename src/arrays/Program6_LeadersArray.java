@@ -34,7 +34,6 @@ public class Program6_LeadersArray {
      */
     public static void printLeaders(int[] arr) {
 
-        int largestNumber = -1;
         List<Integer> outputList = new ArrayList<>();
 
         boolean isLeader;
@@ -61,8 +60,38 @@ public class Program6_LeadersArray {
                 outputList.add(arr[i]);
         }
 
-        for( int leader : outputList)
+        System.out.println("Approach 1");
+        for (int leader : outputList)
             System.out.print(leader + " ");
+    }
+
+    /**
+     * In this apporach I'm starting from the last and making use of maxNum variable which stores the list of last leaders. In order to find the next leader
+     * we need to have a number bigger than the last leader.
+     *
+     * TC - O(n)
+     * @param arr
+     */
+    public static void printLeaders2(int[] arr) {
+
+        int length = arr.length;
+        int maxNum = arr[length - 1];
+
+        ArrayList<Integer> outputList = new ArrayList<>();
+        outputList.add(maxNum);
+
+        for (int i = length - 2; i >= 0; i--) {
+
+            if (arr[i] > maxNum) {
+                maxNum = arr[i];
+                outputList.add(maxNum);
+            }
+        }
+
+        System.out.println("\nApproach 2");
+
+        for (int a : outputList)
+            System.out.print(a + " ");
     }
 
     public static void main(String[] args) {
@@ -70,5 +99,6 @@ public class Program6_LeadersArray {
         int[] arr = {16, 17, 4, 3, 5, 2};
 
         printLeaders(arr);
+        printLeaders2(arr);
     }
 }
