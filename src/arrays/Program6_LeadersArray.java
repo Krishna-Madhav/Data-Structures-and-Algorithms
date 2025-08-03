@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -90,6 +91,7 @@ public class Program6_LeadersArray {
 
         System.out.println("\nApproach 2");
 
+        Collections.reverse(outputList);
         for (int a : outputList)
             System.out.print(a + " ");
     }
