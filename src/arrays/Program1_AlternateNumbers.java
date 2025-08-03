@@ -16,7 +16,7 @@ import java.util.ArrayList;
 //Output: -5 4 12
 //
 
-public class AlternateNumbersProgram1 {
+public class Program1_AlternateNumbers {
 
     // Iterative approach
     private ArrayList<Integer> getAlternates(int[] arr) {
@@ -33,7 +33,7 @@ public class AlternateNumbersProgram1 {
 
     public static void main(String[] args) {
 
-        AlternateNumbersProgram1 driver = new AlternateNumbersProgram1();
+        Program1_AlternateNumbers driver = new Program1_AlternateNumbers();
 
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ArrayList<Integer> alternateNumbers = driver.getAlternates(arr);

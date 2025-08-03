@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Arrays;
 
-public class LargestNumberArray_Program3 {
+public class Program3_LargestNumberArray {
 
     // Approach 1 (Manually iterating through the array)
     private int largestNumber(int[] arr) {
@@ -29,7 +29,7 @@ public class LargestNumberArray_Program3 {
 
         int[] arr = {1,2,4,56,700,8, 100};
 
-        LargestNumberArray_Program3 driver = new LargestNumberArray_Program3();
+        Program3_LargestNumberArray driver = new Program3_LargestNumberArray();
     
     
         int output  = driver.largestNumber(arr);

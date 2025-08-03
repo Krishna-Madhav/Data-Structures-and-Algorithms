@@ -21,12 +21,12 @@ import java.util.Arrays;
  * Output: -1
  * Explanation: The largest element of the array is 10 and the second largest element does not exist.
  */
-public class SecondLargestNumber_Program4 {
+public class Program4_SecondLargestNumber {
 
     public static void main(String[] args) {
         int[] arr = {1000, 5, 1000};
 
-        SecondLargestNumber_Program4 pr = new SecondLargestNumber_Program4();
+        Program4_SecondLargestNumber pr = new Program4_SecondLargestNumber();
         int output = pr.secondLargest(arr);
         System.out.println("Second largest element in arr " + Arrays.toString(arr) + " is : \n" + output);
     }

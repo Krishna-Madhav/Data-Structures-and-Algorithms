@@ -15,7 +15,7 @@ package arrays;
  * Output: -1
  * Explanation: The element to be searched is 6 and its not present, so we return -1.
  */
-public class LinearSearch_Program2 {
+public class Program2_LinearSearch {
 
     private int findElement(int[] arr, int element) {
 
@@ -36,7 +36,7 @@ public class LinearSearch_Program2 {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int element = 10;
 
-        LinearSearch_Program2 linearSearch = new LinearSearch_Program2();
+        Program2_LinearSearch linearSearch = new Program2_LinearSearch();
         int output = linearSearch.findElement(arr, element);
 
         System.out.println("Index of the element is: "+output);
