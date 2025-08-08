@@ -67,7 +67,7 @@ public class Program6_LeadersArray {
     }
 
     /**
-     * In this apporach I'm starting from the last and making use of maxNum variable which stores the list of last leaders. In order to find the next leader
+     * In this approach I'm starting from the last and making use of maxNum variable which stores the list of last leaders. In order to find the next leader
      * we need to have a number bigger than the last leader.
      *
      * TC - O(n)
