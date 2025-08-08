@@ -27,20 +27,27 @@ public class Program9_GenerateSubarrays {
 
     public static void generateSubarrays(int[] arr) {
 
+        ArrayList<ArrayList<Integer>> outerList = new ArrayList<>();
+
         for (int i = 0; i < arr.length; i++) {
 
             for (int j = i; j < arr.length; j++) {
-                for (int k = i; k < j ; k++) {
-                    System.out.print(" " + arr[k]);
+
+                ArrayList<Integer> innerList = new ArrayList<>();
+                for (int k = i; k <= j; k++) {
+                    // System.out.print(" " + arr[k]);
+                    innerList.add(arr[k]);
                 }
-                System.out.println();
+                //  System.out.println();
+                outerList.add(innerList);
             }
         }
+        System.out.println(outerList);
     }
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4, 5, 6};
+        int[] arr = {1, 2, 3, 4, 5};
 
         generateSubarrays(arr);
 
