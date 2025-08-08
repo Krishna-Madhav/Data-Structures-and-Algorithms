@@ -3,11 +3,10 @@ package arrays;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 
 /**
  * Remove duplicates from Sorted Array
- * Last Updated : 19 Nov, 2024
+
  * Given a sorted array arr[] of size n, the goal is to rearrange the array so that all distinct elements appear at the beginning in sorted order.
  * <p>
  * Note: The elements after the distinct ones can be in any order and hold any value, as they don't affect the result.
